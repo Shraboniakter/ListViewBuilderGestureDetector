@@ -26,6 +26,12 @@ class Myapp extends StatelessWidget{
     {"img":"https://rabbil.com/files/rabbilVai.png","title":"Beacon"},
     {"img":"https://rabbil.com/files/rabbilVai.png","title":"Riad"},
     {"img":"https://rabbil.com/files/rabbilVai.png","title":"Mitu"},
+    {"img":"https://rabbil.com/files/rabbilVai.png","title":"Shrabon"},
+    {"img":"https://rabbil.com/files/rabbilVai.png","title":"Kotha"},
+    {"img":"https://rabbil.com/files/rabbilVai.png","title":"Beacon"},
+    {"img":"https://rabbil.com/files/rabbilVai.png","title":"Riad"},
+    {"img":"https://rabbil.com/files/rabbilVai.png","title":"Mitu"},
+
 
 
   ];
@@ -36,9 +42,14 @@ class Myapp extends StatelessWidget{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('List View Builder With Gesture Detector'),
+        title: Text('GridView Builder With Gesture Detector'),
       ),
-      body: ListView.builder(
+      body: GridView.builder(
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          crossAxisSpacing: 1,
+          childAspectRatio:1.1
+        ),
         itemCount: MYItems.length,
         itemBuilder:(context,index){
           return GestureDetector(
